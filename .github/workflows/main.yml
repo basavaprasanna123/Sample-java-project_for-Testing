@@ -48,6 +48,12 @@ jobs:
       run: |
         aws eks update-kubeconfig --name my-demo-sample-eks --region eu-west-3
 
+    - name: Installing Helm 
+      run: |
+        wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz
+        chmod +x get_helm.sh
+        ./get_helm.sh
+        helm version
     - name: Deploy java helm chart to EKS
       run: |
         helm install java ./demo-pro
