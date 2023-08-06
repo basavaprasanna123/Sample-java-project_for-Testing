@@ -8,7 +8,7 @@ image:
   repository: 326071639025.dkr.ecr.eu-west-3.amazonaws.com/java-project
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-tag: "latest:v2"
+  tag: "v2"
 
 imagePullSecrets: []
 nameOverride: ""
