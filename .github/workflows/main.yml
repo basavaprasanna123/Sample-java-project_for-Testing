@@ -39,7 +39,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: java-project
-        IMAGE_TAG: latest
+        IMAGE_TAG: latest:v2
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
@@ -49,4 +49,4 @@ jobs:
 
     - name: Deploy java helm chart to EKS
       run: |
-        helm install java ./java-chart
+        helm install java ./demo-pro
